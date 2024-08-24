@@ -204,14 +204,14 @@ DefaultContentLanguage = "en"
     enable = false
     title = "Gallery"
     description = "Recent beautiful creations from Instagram"
-    footertext = '&copy; Pixies Face Painting 2022'
+    footertext = '&copy; Pixies Face Painting 2024'
 
   # Work section
   [params.work]
     enable = true
     title = "Gallery"
     description = "Recent beautiful creations from Instagram"
-    footertext = '&copy; Pixies Face Painting 2022'
+    footertext = '&copy; Pixies Face Painting 2024'
 
     [[params.work.row]]
       img = "iceprincess.png"
@@ -328,7 +328,7 @@ DefaultContentLanguage = "en"
   # Font awesome icons https://fontawesome.com/icons
   [params.footer]
     enable = true
-    copyright = '&copy; Pixies Face Painting 2022'
+    copyright = '&copy; Pixies Face Painting 2024'
     links = [
         ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"],
         ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfacepainting"]
