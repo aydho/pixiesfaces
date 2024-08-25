@@ -303,7 +303,7 @@ DefaultContentLanguage = "en"
 
   # Contact section
   [params.contact]
-    enable = true
+    enable = false
     form = true
     title = "Enquire"
     description = "Get in touch for more information about face painting, balloon twisting and fairy parties in Melbourne East."
