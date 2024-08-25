@@ -1,14 +1,11 @@
 const process   = require('process');
 const axios     = require('axios');
 const fs        = require('fs');
-const chalk = (await import('chalk')).default;
+const chalk     = require('chalk');
 
 module.exports = {
 
   async onPreBuild({ inputs, utils }) {
-
-    const chalk = (await import('chalk')).default;
-
     console.log(chalk.cyanBright("================================"));
     console.log(chalk.cyanBright("= Instagram images starting up ="));
     console.log(chalk.cyanBright("================================"));

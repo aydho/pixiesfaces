@@ -2,7 +2,7 @@
   "dependencies": {
     "@netlify/functions": "latest",
     "axios": "latest",
-    "chalk": "latest",
+    "chalk": "^4.1.2",
     "qs": "latest"
   }
 }
