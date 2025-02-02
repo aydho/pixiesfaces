@@ -28,7 +28,6 @@ DefaultContentLanguage = "en"
   description = "Pixies Face Painting|Beautiful faces, balloons and fairy parties"
   email = "info@pixiesfaces.com"
   github = "https://github.com/pixiesfaces"
-  facebook = "https://facebook.com/pixiesfacepainting"
   seoimage = "/images/background-logo.png"
   twitter = "@pixiesfaces"
   site_type = "LocalBusiness"
@@ -149,8 +148,7 @@ DefaultContentLanguage = "en"
   [params.navigation.social]
     enable = true
     links = [
-        ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"],
-        ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfacepainting"]
+        ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"]
       ]
 
   # Fixed Background section
@@ -369,7 +367,7 @@ DefaultContentLanguage = "en"
     # Font awesome icons https://fontawesome.com/icons
     details = [
         ["fa-solid fa-phone", "tel:+61406074909", "0406 074 909"],
-        ["fa-brands fa-facebook-messenger", "https://m.me/pixiesfacepainting", "Facebook messenger"],
+        ["fa-solid fa-envelope", "mailto:info@pixiesfaces.com", "info@pixiesfaces.com"]
       ]
     
     # Form Labels
@@ -386,8 +384,7 @@ DefaultContentLanguage = "en"
     enable = true
     copyright = '&copy; Pixies Face Painting 2025'
     links = [
-        ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"],
-        ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfacepainting"]
+        ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"]
       ]
 
   # Custom error/404 page
