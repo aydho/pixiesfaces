@@ -396,7 +396,7 @@ DefaultContentLanguage = "en"
     form = false
     title = "Contact"
     #description = "Get in touch for more information about face painting, balloon twisting and fairy parties in Melbourne East."
-    description = "Unfortunately Pixies is no longer taking bookings."
+    description = "Thank you for visiting Pixies Face Painting. Unfortunately Pixies is not taking bookings at this time."
     info = "Call or Message"
     formHeader = "Enquire by Email"
     
