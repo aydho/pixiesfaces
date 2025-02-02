@@ -311,6 +311,42 @@ DefaultContentLanguage = "en"
       img = "instagram-25.jpg"
       alt = "Instagram Image 25"
 
+    [[params.work.row]]
+      img = "iceprincess.png"
+      alt = "Ice Princess"
+
+    [[params.work.row]]
+      img = "irridescentbutterfly.png"
+      alt = "Irridescent Butterfly"
+
+    [[params.work.row]]
+      img = "redtiger.png"
+      alt = "Red Tiger"
+
+    [[params.work.row]]
+      img = "snaketiger.png"
+      alt = "Snake Tiger"
+
+   [[params.work.row]]
+      img = "flowerprincess.png"
+      alt = "Flower Princess"
+
+   [[params.work.row]]
+      img = "flowers.png"
+      alt = "Flowers"
+
+   [[params.work.row]]
+      img = "happydog.png"
+      alt = "Happy Dog"
+
+    [[params.work.row]]
+      img = "snowtiger.png"
+      alt = "Snow Tiger"
+
+    [[params.work.row]]
+      img = "illusion.png"
+      alt = "Illusion Magazine"
+
   # Testimonials section
   [params.testimonials]
     enable = false
