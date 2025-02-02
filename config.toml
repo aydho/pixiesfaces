@@ -141,7 +141,7 @@ DefaultContentLanguage = "en"
     # Menu Configuration
     home = "Intro"
     insta = "Gallery"
-    work = "Images"
+    work = "Gallery"
     testimonials = "Testimonials"
     services = "Booking Info"
     contact = "Contact"
@@ -203,60 +203,115 @@ DefaultContentLanguage = "en"
   [params.insta]
     enable = false
     title = "Gallery"
-    description = "Recent beautiful creations from Instagram"
-    footertext = '&copy; Pixies Face Painting 2024'
+    description = "Beautiful creations from Instagram"
+    footertext = '&copy; Pixies Face Painting 2025'
 
   # Work section
   [params.work]
     enable = true
     title = "Gallery"
-    description = "Recent beautiful creations from Instagram"
-    footertext = '&copy; Pixies Face Painting 2024'
+    description = "Beautiful creations from Instagram"
+    footertext = '&copy; Pixies Face Painting 2025'
 
     [[params.work.row]]
-      img = "iceprincess.png"
-      alt = "Ice Princess"
-      title = "Ice Princess"
+      img = "instagram-1.jpg"
+      alt = "Instagram Image 1"
 
     [[params.work.row]]
-      img = "irridescentbutterfly.png"
-      alt = "Irridescent Butterfly"
-      title = "Irridescent Butterfly"
+      img = "instagram-2.jpg"
+      alt = "Instagram Image 2"
 
     [[params.work.row]]
-      img = "redtiger.png"
-      alt = "Red Tiger"
-      title = "Red Tiger"
+      img = "instagram-3.jpg"
+      alt = "Instagram Image 3"
 
     [[params.work.row]]
-      img = "snaketiger.png"
-      alt = "Snake Tiger"
-      title = "Snake Tiger"
-
-   [[params.work.row]]
-      img = "flowerprincess.png"
-      alt = "Flower Princess"
-      title = "Flower Princess"
-
-   [[params.work.row]]
-      img = "flowers.png"
-      alt = "Flowers"
-      title = "Flowers"
-
-   [[params.work.row]]
-      img = "happydog.png"
-      alt = "Happy Dog"
-      title = "Happy Dog"
+      img = "instagram-4.jpg"
+      alt = "Instagram Image 4"
 
     [[params.work.row]]
-      img = "snowtiger.png"
-      alt = "Snow Tiger"
-      title = "Snow Tiger"
+      img = "instagram-5.jpg"
+      alt = "Instagram Image 5"
 
     [[params.work.row]]
-      img = "illusion.png"
-      alt = "Illusion Magazine"
-      title = "Illusion Magazine"
+      img = "instagram-6.jpg"
+      alt = "Instagram Image 6"
+
+    [[params.work.row]]
+      img = "instagram-7.jpg"
+      alt = "Instagram Image 7"
+
+    [[params.work.row]]
+      img = "instagram-8.jpg"
+      alt = "Instagram Image 8"
+
+    [[params.work.row]]
+      img = "instagram-9.jpg"
+      alt = "Instagram Image 9"
+
+    [[params.work.row]]
+      img = "instagram-10.jpg"
+      alt = "Instagram Image 10"
+
+    [[params.work.row]]
+      img = "instagram-11.jpg"
+      alt = "Instagram Image 11"
+
+    [[params.work.row]]
+      img = "instagram-12.jpg"
+      alt = "Instagram Image 12"
+
+    [[params.work.row]]
+      img = "instagram-13.jpg"
+      alt = "Instagram Image 13"
+
+    [[params.work.row]]
+      img = "instagram-14.jpg"
+      alt = "Instagram Image 14"
+
+    [[params.work.row]]
+      img = "instagram-15.jpg"
+      alt = "Instagram Image 15"
+
+    [[params.work.row]]
+      img = "instagram-16.jpg"
+      alt = "Instagram Image 16"
+
+    [[params.work.row]]
+      img = "instagram-17.jpg"
+      alt = "Instagram Image 17"
+
+    [[params.work.row]]
+      img = "instagram-18.jpg"
+      alt = "Instagram Image 18"
+
+    [[params.work.row]]
+      img = "instagram-19.jpg"
+      alt = "Instagram Image 19"
+
+    [[params.work.row]]
+      img = "instagram-20.jpg"
+      alt = "Instagram Image 20"
+
+    [[params.work.row]]
+      img = "instagram-21.jpg"
+      alt = "Instagram Image 21"
+
+    [[params.work.row]]
+      img = "instagram-22.jpg"
+      alt = "Instagram Image 22"
+
+    [[params.work.row]]
+      img = "instagram-23.jpg"
+      alt = "Instagram Image 23"
+
+    [[params.work.row]]
+      img = "instagram-24.jpg"
+      alt = "Instagram Image 24"
+
+    [[params.work.row]]
+      img = "instagram-25.jpg"
+      alt = "Instagram Image 25"
 
   # Testimonials section
   [params.testimonials]
@@ -304,10 +359,10 @@ DefaultContentLanguage = "en"
   # Contact section
   [params.contact]
     enable = true
-    form = true
-    title = "Enquire"
+    form = false
+    title = "Contact"
     #description = "Get in touch for more information about face painting, balloon twisting and fairy parties in Melbourne East."
-    description = "Thank you for your interest.  Unfortunately Pixies is unable to take further bookings in 2024."
+    description = "Unfortunately Pixies is no longer taking bookings."
     info = "Call or Message"
     formHeader = "Enquire by Email"
     
@@ -329,7 +384,7 @@ DefaultContentLanguage = "en"
   # Font awesome icons https://fontawesome.com/icons
   [params.footer]
     enable = true
-    copyright = '&copy; Pixies Face Painting 2024'
+    copyright = '&copy; Pixies Face Painting 2025'
     links = [
         ["fa-brands fa-instagram", "https://instagram.com/pixiesfacepainting"],
         ["fa-brands fa-facebook-f", "https://facebook.com/pixiesfacepainting"]
