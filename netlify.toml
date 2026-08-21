@@ -3,7 +3,7 @@ publish = "public"
 command = "hugo --gc --minify"
 
 [context.production.environment]
-HUGO_VERSION = "0.133.0"
+HUGO_VERSION = "0.142.0"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
@@ -11,20 +11,20 @@ HUGO_ENABLEGITINFO = "true"
 command = "hugo --gc --minify --enableGitInfo"
 
 [context.split1.environment]
-HUGO_VERSION = "0.133.0"
+HUGO_VERSION = "0.142.0"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
 command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.133.0"
+HUGO_VERSION = "0.142.0"
 
 [context.branch-deploy]
 command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.133.0"
+HUGO_VERSION = "0.142.0"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
@@ -170,20 +170,20 @@ HUGO_ENABLEGITINFO = "true"
   [headers.values]
     cache-control = "max-age=86400, public, immutable"
 
-[[plugins]]
-package = "/netlify-plugins/netlify-plugin-fetch-instagram-basic-api"
-  [plugins.inputs]
+#[[plugins]]
+#package = "/netlify-plugins/netlify-plugin-fetch-instagram-basic-api"
+#  [plugins.inputs]
 
     # Where to put the image files
     # this is the Hugo static images directory
-    imageFolder = "static/images"
+#    imageFolder = "static/images"
 
     # Where to put the instagram data file
     # this is the Hugo data directory
-    dataFolder = "data"
+#    dataFolder = "data"
 
     # How many images should we retrieve from Instagram?
-    imageCount = 25
+#    imageCount = 25
 
     # How many seconds should we cache the instagram feed for?
     # feedTTL = 2419200    # 4 weeks
@@ -191,8 +191,8 @@ package = "/netlify-plugins/netlify-plugin-fetch-instagram-basic-api"
     # How many seconds should we cache each instagram image for?
     # imageTTL = 2419200   # 4 weeks
 
-[functions]
-  directory = "functions"
+#[functions]
+#  directory = "functions"
 
-[dev]
-functionsPort = 9999
+#[dev]
+#functionsPort = 9999
