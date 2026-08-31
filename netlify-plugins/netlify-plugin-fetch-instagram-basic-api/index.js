@@ -63,13 +63,14 @@ module.exports = {
         console.log('Instagram API success - Return status:', chalk.green(response.status));
         instagramResponse = response.data;
       } catch (err) {
-        console.log('Instagram API failure - Return status:', chalk.red(err.status));
+        // axios exposes the HTTP status under err.response.status, not err.status.
+        console.log('Instagram API failure - Return status:', chalk.red(err.response?.status));
         console.log(err);
       }
 
       // If we didn't receive data, fail the plugin but not the build
       if(!instagramResponse){
-        utils.build.failBuild(`The Instagram feed did not return data.\Halting the build.`);
+        utils.build.failBuild(`The Instagram feed did not return data.\nHalting the build.`);
         return;
       }
 
@@ -90,7 +91,7 @@ module.exports = {
         });
         i++
       }
-      await fs.writeFileSync(dataFile, JSON.stringify(instagramData));
+      fs.writeFileSync(dataFile, JSON.stringify(instagramData));
       console.log("Instagram data fetched and written to json data file ",chalk.green(dataFile));
     //  await utils.cache.save(dataFile, { ttl: inputs.feedTTL });
     //  console.log(chalk.green("Instagram data fetched and cached in json data file"), chalk.gray(`(TTL:${inputs.feedTTL} seconds)`));
@@ -100,39 +101,30 @@ module.exports = {
     // let's fetch any uncached images we might need
     console.log("Iterating over",chalk.yellow(instagramData.length),"Instagram images.");
     let j = 1;
-    for (const image in instagramData) {
-      let { localImageFilename, sourceImageURL } = instagramData[image];
-      let localImageURL = `${imageFolder}/${localImageFilename}`;
-      //console.log("Instagram image local filename:", chalk.yellow(localImageURL));
-      // if the image exists in the cache, recover it.
-      //if ( await utils.cache.has(localImageURL) ) {
-      //  console.log('Instagram image restoring from cache:', chalk.yellow(localImageURL));
-      //  await utils.cache.restore(localImageURL);
-      //  console.log('Instagram image restored from cache:', chalk.green(localImageURL));
-      //} else {
-        // if the image is not cached, fetch and cache it.
-        //console.log("Intagram image retrieving from URL:", chalk.yellow(sourceImageURL));
-        try {
-          const response = await axios({
-            url: sourceImageURL,
-            method: 'GET',
-            responseType: 'stream'      
-          });
-          //console.log('Instagram image retrieval success - return status:', chalk.green(response.status));
+    for (const { localImageFilename, sourceImageURL } of instagramData) {
+      const localImageURL = `${imageFolder}/${localImageFilename}`;
+      try {
+        const response = await axios({
+          url: sourceImageURL,
+          method: 'GET',
+          responseType: 'stream'
+        });
+        console.log("Processing image #", j);
+        // Wait for the download stream to finish writing before moving on,
+        // otherwise the build can complete before the images are flushed to disk.
+        await new Promise((resolve, reject) => {
           const dest = fs.createWriteStream(localImageURL);
-          response.data.pipe(dest,{emitClose: true});
-          console.log("Processing image #",j);
-          await dest.on('finish', () => {
-            console.log("Image written to:", chalk.green(localImageURL));
-          });
-          //await utils.cache.save(localImageURL, { ttl: inputs.imageTTL });
-          //console.log("Instagram image cached:", chalk.green(localImageURL), chalk.gray(`(TTL:${inputs.imageTTL} seconds)`));
-        } catch (err) {
-          console.log('Instagram image #",i,"retrieval failure - return status:', chalk.red(err.status));
-          console.log(err);
-        }
-        j++;
-      //}
+          response.data.pipe(dest);
+          dest.on('finish', resolve);
+          dest.on('error', reject);
+          response.data.on('error', reject);
+        });
+        console.log("Image written to:", chalk.green(localImageURL));
+      } catch (err) {
+        console.log(`Instagram image #${j} retrieval failure - return status:`, chalk.red(err.response?.status));
+        console.log(err);
+      }
+      j++;
     }
   console.log(chalk.cyanBright("============================="));
   console.log(chalk.cyanBright("= Instagram images finished ="));

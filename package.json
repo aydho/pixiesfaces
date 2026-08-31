@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "@netlify/functions": "latest",
-    "axios": "latest",
+    "@netlify/functions": "^2.8.1",
+    "axios": "^1.19.0",
     "chalk": "^4.1.2",
-    "qs": "latest"
+    "qs": "^6.13.0"
   }
 }

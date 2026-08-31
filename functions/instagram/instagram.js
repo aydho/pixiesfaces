@@ -27,10 +27,21 @@ const handler = async function (event) {
       body: JSON.stringify(data),
     }
   } catch (error) {
-    const { data, headers, status, statusText } = error.response
+    // axios only populates error.response when a response was received.
+    // Network errors, timeouts and DNS failures have no response object, so
+    // reading it unconditionally would throw a second time inside the catch.
+    if (error.response) {
+      const { data, headers, status, statusText } = error.response
+      return {
+        statusCode: status,
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ status, statusText, headers, data }),
+      }
+    }
     return {
-      statusCode: error.response.status,
-      body: JSON.stringify({ status, statusText, headers, data }),
+      statusCode: 502,
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ error: error.message }),
     }
   }
 }
