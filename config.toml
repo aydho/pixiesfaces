@@ -1,5 +1,5 @@
 # Page settings
-baseurl = "https://www.pixiesfaces.com"
+baseurl = "https://pixiesfaces.aydho.com"
 title = "Pixies Face Painting"
 disableKinds = ["taxonomy","term","RSS"]
 enableRobotsTXT = true
